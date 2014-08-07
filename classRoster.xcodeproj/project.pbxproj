@@ -12,6 +12,7 @@
 		150DA38119943E6900BDB2E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 150DA37F19943E6900BDB2E1 /* Main.storyboard */; };
 		150DA38319943E6900BDB2E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 150DA38219943E6900BDB2E1 /* Images.xcassets */; };
 		150DA38F19943E6900BDB2E1 /* classRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150DA38E19943E6900BDB2E1 /* classRosterTests.swift */; };
+		150DA39919943ED600BDB2E1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150DA39819943ED600BDB2E1 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		150DA38819943E6900BDB2E1 /* classRosterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = classRosterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		150DA38D19943E6900BDB2E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		150DA38E19943E6900BDB2E1 /* classRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classRosterTests.swift; sourceTree = "<group>"; };
+		150DA39819943ED600BDB2E1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				150DA37B19943E6900BDB2E1 /* AppDelegate.swift */,
 				150DA37D19943E6900BDB2E1 /* ViewController.swift */,
+				150DA39819943ED600BDB2E1 /* Person.swift */,
 				150DA37F19943E6900BDB2E1 /* Main.storyboard */,
 				150DA38219943E6900BDB2E1 /* Images.xcassets */,
 				150DA37919943E6900BDB2E1 /* Supporting Files */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150DA39919943ED600BDB2E1 /* Person.swift in Sources */,
 				150DA37E19943E6900BDB2E1 /* ViewController.swift in Sources */,
 				150DA37C19943E6900BDB2E1 /* AppDelegate.swift in Sources */,
 			);
