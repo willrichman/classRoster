@@ -1,0 +1,18 @@
+Class roster app created for Code Fellows' Foundations II class.
+
+Instructions were as follows:
+
+1) Create a Person class with a firstName and lastName property (String).
+2) Create an optional property for an image (UIImage).
+3) Create an initializer that takes in two parameters, a string for firstName and string for lastName
+4) Create a fullName() function to return the Person's firstName and lastName as one String
+5) Add a new method to your ViewController to initialize an Array of Person(s) with each person from class
+6) Embed your View Controller in a Navigation Controller:
+        from your Storyboard, click your yellow ViewController object
+        click the Editor menu
+        choose Embed In -> Navigation Controller
+7) Create a button on your ViewController in Storyboard and connect it to another View Controller using a Show segue (previously known as push segue).
+
+Advanced Challenge (not mandatory):
+
+Using Apple's documentation as a guide, load in the array of Person objects from a .plist file in your bundle

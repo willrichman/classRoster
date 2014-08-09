@@ -13,6 +13,8 @@
 		150DA38319943E6900BDB2E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 150DA38219943E6900BDB2E1 /* Images.xcassets */; };
 		150DA38F19943E6900BDB2E1 /* classRosterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150DA38E19943E6900BDB2E1 /* classRosterTests.swift */; };
 		150DA39919943ED600BDB2E1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150DA39819943ED600BDB2E1 /* Person.swift */; };
+		150DA39B1994400700BDB2E1 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 150DA39A1994400700BDB2E1 /* README */; };
+		150DA39D1996BAD700BDB2E1 /* ClassList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 150DA39C1996BAD700BDB2E1 /* ClassList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		150DA38D19943E6900BDB2E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		150DA38E19943E6900BDB2E1 /* classRosterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classRosterTests.swift; sourceTree = "<group>"; };
 		150DA39819943ED600BDB2E1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		150DA39A1994400700BDB2E1 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		150DA39C1996BAD700BDB2E1 /* ClassList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		150DA36D19943E6900BDB2E1 = {
 			isa = PBXGroup;
 			children = (
+				150DA39A1994400700BDB2E1 /* README */,
 				150DA37819943E6900BDB2E1 /* classRoster */,
 				150DA38B19943E6900BDB2E1 /* classRosterTests */,
 				150DA37719943E6900BDB2E1 /* Products */,
@@ -83,6 +88,7 @@
 				150DA37F19943E6900BDB2E1 /* Main.storyboard */,
 				150DA38219943E6900BDB2E1 /* Images.xcassets */,
 				150DA37919943E6900BDB2E1 /* Supporting Files */,
+				150DA39C1996BAD700BDB2E1 /* ClassList.plist */,
 			);
 			path = classRoster;
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150DA39B1994400700BDB2E1 /* README in Resources */,
 				150DA38119943E6900BDB2E1 /* Main.storyboard in Resources */,
 				150DA38319943E6900BDB2E1 /* Images.xcassets in Resources */,
+				150DA39D1996BAD700BDB2E1 /* ClassList.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
