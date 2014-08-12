@@ -12,7 +12,7 @@ class ViewController: UIViewController {
                             
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        populateRoster()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +20,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func populateRoster() {
+        let path = NSBundle.mainBundle().pathForResource("ClassList", ofType: "plist")
+        let PLArray = NSArray(contentsOfFile: path) as Array
+        var classRoster = [] as Array
+        for classMember in PLArray {
+            var firstName = classMember[0] as String
+            var lastName = classMember[1] as String
+            var newPerson = Person(firstName: firstName, lastName: lastName)
+            println("\(newPerson.fullName())")
+            classRoster.append(newPerson)
+        }
+    }
 }
 
