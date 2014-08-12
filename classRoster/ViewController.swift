@@ -33,7 +33,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //get my cell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         //configure it for the row
-        
+        var personForRow =  self.classRoster[indexPath.row] as Person
+        cell.textLabel.text = personForRow.fullName()
         //return the cell
         return cell
     }
