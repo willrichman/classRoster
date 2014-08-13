@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return classRoster.count
+        return self.classRoster.count
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
@@ -54,7 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var firstName = classMember[0] as String
             var lastName = classMember[1] as String
             var newPerson = Person(firstName: firstName, lastName: lastName)
-            classRoster.append(newPerson)
+            self.classRoster.append(newPerson)
         }
     }
 }
