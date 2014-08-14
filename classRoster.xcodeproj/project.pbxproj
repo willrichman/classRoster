@@ -15,6 +15,7 @@
 		150DA39919943ED600BDB2E1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150DA39819943ED600BDB2E1 /* Person.swift */; };
 		150DA39B1994400700BDB2E1 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 150DA39A1994400700BDB2E1 /* README */; };
 		150DA39D1996BAD700BDB2E1 /* ClassList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 150DA39C1996BAD700BDB2E1 /* ClassList.plist */; };
+		15B1EB20199C23A8009E9856 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1EB1F199C23A8009E9856 /* detailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		150DA39819943ED600BDB2E1 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		150DA39A1994400700BDB2E1 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		150DA39C1996BAD700BDB2E1 /* ClassList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassList.plist; sourceTree = "<group>"; };
+		15B1EB1F199C23A8009E9856 /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				150DA37B19943E6900BDB2E1 /* AppDelegate.swift */,
 				150DA37D19943E6900BDB2E1 /* ViewController.swift */,
+				15B1EB1F199C23A8009E9856 /* detailViewController.swift */,
 				150DA39819943ED600BDB2E1 /* Person.swift */,
 				150DA37F19943E6900BDB2E1 /* Main.storyboard */,
 				150DA38219943E6900BDB2E1 /* Images.xcassets */,
@@ -222,6 +225,7 @@
 				150DA39919943ED600BDB2E1 /* Person.swift in Sources */,
 				150DA37E19943E6900BDB2E1 /* ViewController.swift in Sources */,
 				150DA37C19943E6900BDB2E1 /* AppDelegate.swift in Sources */,
+				15B1EB20199C23A8009E9856 /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

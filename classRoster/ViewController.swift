@@ -43,7 +43,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        return 3
 //    }
     
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "detailSegue" {
+            let destination = detailViewController()
+            let indexPath = tableView!.indexPathForSelectedRow()
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }// Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    
+    
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
         println(indexPath.row)
     }
     
