@@ -12,13 +12,18 @@ class detailViewController: UIViewController {
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
-    
+    var personDisplayed = Person(firstName: "test", lastName: "test")
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        firstName.text = personDisplayed.firstName
+        lastName.text = personDisplayed.lastName
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

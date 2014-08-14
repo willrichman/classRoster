@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         //get my cell
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView!.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         //configure it for the row
         var personForRow =  self.classRoster[indexPath.row] as Person
         cell.textLabel.text = personForRow.fullName()
@@ -43,22 +43,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        return 3
 //    }
     
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue.identifier == "detailSegue" {
-            let destination = detailViewController()
+            let destination = segue.destinationViewController as detailViewController
             let indexPath = tableView!.indexPathForSelectedRow()
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        }// Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+            tableView!.deselectRowAtIndexPath(indexPath, animated: true)
+            let personForText = self.classRoster[indexPath.row] as Person
+            destination.personDisplayed = personForText
     }
     
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
         println(indexPath.row)
     }
     
