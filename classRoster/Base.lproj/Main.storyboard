@@ -47,7 +47,7 @@
         <!--Detail View Controller-->
         <scene sceneID="dWi-oJ-uw9">
             <objects>
-                <viewController id="1pv-bR-xUj" customClass="detailViewController" customModule="classRoster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1pv-bR-xUj" customClass="DetailViewController" customModule="classRoster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypE-Cd-2Kh"/>
                         <viewControllerLayoutGuide type="bottom" id="LX4-eR-rXi"/>
@@ -57,27 +57,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Man-cM-f94">
-                                <rect key="frame" x="170" y="174" width="134" height="30"/>
+                                <rect key="frame" x="170" y="116" width="134" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ah6-GY-vTN">
-                                <rect key="frame" x="170" y="238" width="134" height="30"/>
+                                <rect key="frame" x="170" y="185" width="134" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCh-Oh-vJt">
-                                <rect key="frame" x="30" y="177" width="85" height="21"/>
+                                <rect key="frame" x="30" y="119" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOz-zU-o2L">
-                                <rect key="frame" x="30" y="242" width="85" height="21"/>
+                                <rect key="frame" x="30" y="189" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personDefault.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7et-tc-JLm">
+                                <rect key="frame" x="38" y="263" width="245" height="245"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -110,6 +113,9 @@
             <point key="canvasLocation" x="234" y="260"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="personDefault.jpg" width="418" height="418"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
