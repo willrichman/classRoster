@@ -8,11 +8,11 @@
 
 import UIKit
 
-class detailViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
-    var personDisplayed = Person(firstName: "test", lastName: "test")
+    var personDisplayed : Person?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +21,15 @@ class detailViewController: UIViewController {
     }
 
     override func viewWillAppear(animated: Bool) {
-        firstName.text = personDisplayed.firstName
-        lastName.text = personDisplayed.lastName
+        self.firstName.text = self.personDisplayed?.firstName
+        self.lastName.text = self.personDisplayed?.lastName
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
 

@@ -19,6 +19,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,7 +30,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return self.classRoster.count
+        if section == 0 {
+            return self.classRoster.count
+        }
+        else if section == 1 {
+            return 2
+        }
+        else {
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
@@ -39,19 +51,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-//    func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-//        return 3
-//    }
-    
-
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-            let destination = segue.destinationViewController as detailViewController
-            let indexPath = tableView!.indexPathForSelectedRow()
-            tableView!.deselectRowAtIndexPath(indexPath, animated: true)
-            let personForText = self.classRoster[indexPath.row] as Person
-            destination.personDisplayed = personForText
+    func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+        return 2
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "detailSegue" {
+            var destination = segue.destinationViewController as DetailViewController
+            var indexPath = tableView.indexPathForSelectedRow()
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            var personForText = self.classRoster[indexPath.row] as Person
+            destination.personDisplayed = personForText
+        }
+    }
+    
+    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+        if section == 0 {
+            return "Students"
+        }
+        else if section == 1 {
+            return "Teachers"
+        }
+        else {
+            return "Test"
+        }
+    }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         println(indexPath.row)
@@ -66,6 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var newPerson = Person(firstName: firstName, lastName: lastName)
             self.classRoster.append(newPerson)
         }
+        
     }
 }
 
