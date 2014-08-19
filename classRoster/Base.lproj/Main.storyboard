@@ -30,6 +30,13 @@
                                             <segue destination="1pv-bR-xUj" kind="push" identifier="detailSegue" id="Iyl-gp-aBA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rgw-xJ-1Yf">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rgw-xJ-1Yf" id="Y2c-gz-ALv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -43,6 +50,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="728" y="260"/>
+        </scene>
+        <!--New Item View Controller-->
+        <scene sceneID="Rb5-vq-WJm">
+            <objects>
+                <viewController id="Ox8-XA-HJ4" customClass="NewItemViewController" customModule="classRoster" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YU4-02-6xC"/>
+                        <viewControllerLayoutGuide type="bottom" id="HmP-W8-4PR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hdD-Aw-vQT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-Q7-BTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="1020"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="dWi-oJ-uw9">
@@ -89,7 +114,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="capture:" destination="1pv-bR-xUj" eventType="touchUpInside" id="DfF-Zc-awE"/>
+                                    <action selector="capture:" destination="1pv-bR-xUj" eventType="touchUpInside" id="Hgb-3f-6wt"/>
                                 </connections>
                             </button>
                         </subviews>
