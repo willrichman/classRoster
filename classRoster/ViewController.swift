@@ -87,7 +87,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.classRoster[0].append(newPerson)
             }
         }
-        
     }
 }
 

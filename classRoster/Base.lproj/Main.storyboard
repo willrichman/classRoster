@@ -81,11 +81,23 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personDefault.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7et-tc-JLm">
                                 <rect key="frame" x="38" y="263" width="245" height="245"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hX-Ra-Eax">
+                                <rect key="frame" x="93" y="516" width="134" height="32"/>
+                                <color key="backgroundColor" red="1" green="0.025564295550000001" blue="0.038321037510000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="capture:" destination="1pv-bR-xUj" eventType="touchUpInside" id="DfF-Zc-awE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dEM-ZC-4rP"/>
                     <connections>
+                        <outlet property="detailImage" destination="7et-tc-JLm" id="nzD-9f-J2a"/>
                         <outlet property="firstName" destination="Man-cM-f94" id="jlM-GV-DxZ"/>
                         <outlet property="lastName" destination="Ah6-GY-vTN" id="MsP-6C-1eX"/>
                     </connections>

@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var detailImage: UIImageView!
     var personDisplayed : Person?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +32,27 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Image Picker Controller Delegate
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+        detailImage.image = image
+    }
+    
+    @IBAction func capture(sender : UIButton) {
+        println("Button capture")
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
+            
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.mediaTypes = [kUTTypeImage]
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+
+        }
+    }
+
     
     
 
