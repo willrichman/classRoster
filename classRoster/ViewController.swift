@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    var classRoster = [[] as Array, [] as Array] as Array
+    var classRoster = [[Person](), [Person]()] as Array
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func viewWillAppear(animated: Bool) {
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,8 +79,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         for classMember in PLArray {
             var firstName = classMember[0] as String
             var lastName = classMember[1] as String
-            var newPerson = Person(firstName: firstName, lastName: lastName)
-            if lastName == "Clem" || lastName == "Johnson" {
+            var role = classMember[2] as String
+            var newPerson = Person(firstName: firstName, lastName: lastName, role: role)
+            if role == "Teacher" {
                 self.classRoster[1].append(newPerson)
             }
             else {
@@ -89,4 +90,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 }
-

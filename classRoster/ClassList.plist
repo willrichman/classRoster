@@ -6,106 +6,132 @@
     <array>
         <string>Nate</string>
         <string>Birkholz</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Matthew</string>
         <string>Brightbill</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Jeff</string>
         <string>Chavez</string>
+        <string>Student</string>
     </array>
     <array>
         <string>John</string>
         <string>Clem</string>
+        <string>Teacher</string>
     </array>
     <array>
         <string>Christie</string>
         <string>Ferderer</string>
+        <string>Student</string>
     </array>
     <array>
         <string>David</string>
         <string>Fry</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Adrian</string>
         <string>Gherle</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Jake</string>
         <string>Hawken</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Brad</string>
         <string>Johnson</string>
+        <string>Teacher</string>
     </array>
     <array>
         <string>Shams</string>
         <string>Kazi</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Cameron</string>
         <string>Klein</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Kori</string>
         <string>Kolodziejczak</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Parker</string>
         <string>Lewis</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Nathan</string>
         <string>Ma</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Casey</string>
         <string>MacPhee</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Brendan</string>
         <string>McAleer</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Brian</string>
         <string>Mendez</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Mark</string>
         <string>Morris</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Rowan</string>
         <string>North</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Kevin</string>
         <string>Pham</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Will</string>
         <string>Richman</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Heather</string>
         <string>Thueringer</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Tuan</string>
         <string>Vu</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Zack</string>
         <string>Walkingstick</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Sarah</string>
         <string>Wong</string>
+        <string>Student</string>
     </array>
     <array>
         <string>Hongyao</string>
         <string>Zhang</string>
+        <string>Student</string>
     </array>
 </array>
 </plist>

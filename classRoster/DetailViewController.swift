@@ -9,7 +9,7 @@
 import UIKit
 import MobileCoreServices
 
-class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -18,18 +18,29 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(animated: Bool) {
         self.firstName.text = self.personDisplayed?.firstName
         self.lastName.text = self.personDisplayed?.lastName
+        self.firstName.delegate = self
+        self.lastName.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField!) {
+        personDisplayed?.firstName = self.firstName.text
+        personDisplayed?.lastName = self.lastName.text
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     // Image Picker Controller Delegate

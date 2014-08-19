@@ -12,11 +12,13 @@ import UIKit
 class Person {
     var firstName : String
     var lastName : String
+    var role : String
     var image : UIImage?
     
-    init (firstName: String, lastName: String) {
+    init (firstName: String, lastName: String, role : String) {
         self.firstName = firstName
         self.lastName = lastName
+        self.role = role
     }
     
     func fullName() -> String {
