@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    var classRoster = [] as Array
+    var classRoster = [[] as Array, [] as Array] as Array
                             
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,22 +30,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return self.classRoster.count
-        }
-        else if section == 1 {
-            return 2
-        }
-        else {
-            return 0
-        }
+        return self.classRoster[section].count
     }
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         //get my cell
         let cell = tableView!.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         //configure it for the row
-        var personForRow =  self.classRoster[indexPath.row] as Person
+        var personForRow =  self.classRoster[indexPath.section][indexPath.row] as Person
         cell.textLabel.text = personForRow.fullName()
         //return the cell
         return cell
@@ -60,7 +52,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var destination = segue.destinationViewController as DetailViewController
             var indexPath = tableView.indexPathForSelectedRow()
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            var personForText = self.classRoster[indexPath.row] as Person
+            var personForText = self.classRoster[indexPath.section][indexPath.row] as Person
             destination.personDisplayed = personForText
         }
     }
@@ -88,7 +80,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var firstName = classMember[0] as String
             var lastName = classMember[1] as String
             var newPerson = Person(firstName: firstName, lastName: lastName)
-            self.classRoster.append(newPerson)
+            if lastName == "Clem" || lastName == "Johnson" {
+                self.classRoster[1].append(newPerson)
+            }
+            else {
+                self.classRoster[0].append(newPerson)
+            }
         }
         
     }
