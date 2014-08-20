@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "classRoster/DetailViewController.swift"
-            timestampString = "430112848.840491"
+            timestampString = "430258916.218086"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "capture(_:)"
             landmarkType = "5">
          </BreakpointContent>

@@ -20,6 +20,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         super.viewDidLoad()
         self.firstName.delegate = self
         self.lastName.delegate = self
+        self.detailImage.layer.cornerRadius = 10.0
+        self.detailImage.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -29,14 +31,14 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         if let image = personDisplayed?.image {
             self.detailImage.image = image
         }
-            
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: UITextFieldDelegate
     
     func textFieldDidEndEditing(textField: UITextField!) {
         self.personDisplayed?.firstName = self.firstName.text
@@ -48,16 +50,22 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         return true
     }
     
+    //MARK: UIImagePickerControllerDelegate
+    
     @IBAction func capture(sender : UIButton) {
         println("Button capture")
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
             
             var imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
             imagePicker.allowsEditing = true
             self.presentViewController(imagePicker, animated: true, completion: nil)
-
+        }
+        else {
+            var alert = UIAlertController(title: "Alert", message: "This device does not have a supported camera.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
@@ -65,6 +73,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         //this gets fired when the image picker is done
         var editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         self.personDisplayed?.image = editedImage
+        self.detailImage.image = editedImage
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
 

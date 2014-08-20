@@ -29,6 +29,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: UITableViewDelegate
+    
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return self.classRoster[section].count
     }
@@ -47,16 +49,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 2
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue.identifier == "detailSegue" {
-            var destination = segue.destinationViewController as DetailViewController
-            var indexPath = tableView.indexPathForSelectedRow()
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            var personForText = self.classRoster[indexPath.section][indexPath.row] as Person
-            destination.personDisplayed = personForText
-        }
-    }
-    
     func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
         if section == 0 {
             return "Students"
@@ -71,6 +63,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         println(indexPath.row)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "detailSegue" {
+            var destination = segue.destinationViewController as DetailViewController
+            var indexPath = tableView.indexPathForSelectedRow()
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            var personForText = self.classRoster[indexPath.section][indexPath.row] as Person
+            destination.personDisplayed = personForText
+        }
     }
     
     func populateRoster() {
