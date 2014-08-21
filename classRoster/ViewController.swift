@@ -48,8 +48,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return 2
     }
-    
+
+    /* Set labels for the two sections of the table */
     func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+
         if section == 0 {
             return "Students"
         }
@@ -61,10 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        println(indexPath.row)
-    }
-    
+    /* Send the selected Person object to DetailViewController */
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if segue.identifier == "detailSegue" {
             var destination = segue.destinationViewController as DetailViewController
@@ -75,6 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    /* Populate the classRoster array with the two subarrays */
     func populateRoster() {
         let path = NSBundle.mainBundle().pathForResource("ClassList", ofType: "plist")
         let PLArray = NSArray(contentsOfFile: path) as Array
