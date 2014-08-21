@@ -72,6 +72,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var personForText = self.classRoster[indexPath.section][indexPath.row] as Person
             destination.personDisplayed = personForText
         }
+        else if segue.identifier == "addPersonButton" {
+            
+        }
     }
     
     /* Populate the classRoster array with the two subarrays */

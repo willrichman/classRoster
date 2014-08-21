@@ -24,4 +24,5 @@ class Person {
     func fullName() -> String {
         return "\(self.firstName) \(self.lastName)"
     }
+    
 }

@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         super.viewDidLoad()
         self.firstName.delegate = self
         self.lastName.delegate = self
-        self.detailImage.layer.cornerRadius = 10.0
+        self.detailImage.layer.cornerRadius = self.detailImage.frame.width / 2
         self.detailImage.clipsToBounds = true
     }
 
@@ -53,7 +53,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     //MARK: UIImagePickerControllerDelegate
     
     @IBAction func capture(sender : UIButton) {
-        println("Button capture")
+        
+        /* Check if Camera is available on device.  If not, give user option to use Photo Library */
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera){
             
             var imagePicker = UIImagePickerController()
@@ -62,6 +63,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             imagePicker.allowsEditing = true
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
+            
         else {
             var alert = UIAlertController(title: "Alert", message: "This device does not have a supported camera.", preferredStyle: UIAlertControllerStyle.ActionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))

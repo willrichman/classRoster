@@ -35,7 +35,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MfK-ZV-oX3"/>
+                    <navigationItem key="navigationItem" id="MfK-ZV-oX3">
+                        <barButtonItem key="rightBarButtonItem" title="Add Person" id="D8m-ph-dXU">
+                            <connections>
+                                <segue destination="Ox8-XA-HJ4" kind="push" identifier="addPersonButton" id="Qkw-uF-lQl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3ay-Dy-9ND" id="wAv-tF-m1z"/>
                     </connections>
@@ -57,6 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hqo-xB-mbE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-Q7-BTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,7 +104,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personDefault.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7et-tc-JLm">
-                                <rect key="frame" x="38" y="263" width="245" height="245"/>
+                                <rect key="frame" x="38" y="244" width="245" height="245"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hX-Ra-Eax">
                                 <rect key="frame" x="93" y="516" width="134" height="32"/>
