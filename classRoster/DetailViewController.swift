@@ -22,12 +22,12 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         self.lastName.delegate = self
         self.detailImage.layer.cornerRadius = 10.0
         self.detailImage.clipsToBounds = true
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillAppear(animated: Bool) {
         self.firstName.text = self.personDisplayed?.firstName
         self.lastName.text = self.personDisplayed?.lastName
+        /* If personDisplayed has an image, display it.  Otherwise photo stays as default. */
         if let image = personDisplayed?.image {
             self.detailImage.image = image
         }
@@ -62,16 +62,20 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
             imagePicker.allowsEditing = true
             self.presentViewController(imagePicker, animated: true, completion: nil)
         }
-        else if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
-            var imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
-            imagePicker.allowsEditing = true
-            self.presentViewController(imagePicker, animated: true, completion: nil)
-        }
         else {
-            var alert = UIAlertController(title: "Alert", message: "This device does not have a supported camera.", preferredStyle: UIAlertControllerStyle.Alert)
+            var alert = UIAlertController(title: "Alert", message: "This device does not have a supported camera.", preferredStyle: UIAlertControllerStyle.ActionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            /* Go to Photo Library instead of Camera*/
+            alert.addAction(UIAlertAction(title: "Use Photo Library", style: UIAlertActionStyle.Default){
+                    (action) in
+                    if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary){
+                        var imagePicker = UIImagePickerController()
+                        imagePicker.delegate = self
+                        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+                        imagePicker.allowsEditing = true
+                        self.presentViewController(imagePicker, animated: true, completion: nil)
+                    }
+                })
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
