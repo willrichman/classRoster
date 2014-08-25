@@ -20,8 +20,6 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         super.viewDidLoad()
         self.firstName.delegate = self
         self.lastName.delegate = self
-        self.detailImage.layer.cornerRadius = self.detailImage.frame.width / 2
-        self.detailImage.clipsToBounds = true
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -31,12 +29,21 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         if let image = personDisplayed?.image {
             self.detailImage.image = image
         }
+        self.detailImage.layer.cornerRadius = self.detailImage.frame.width / 2
+        self.detailImage.clipsToBounds = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.detailImage.layer.cornerRadius = self.detailImage.frame.width / 2
+        self.detailImage.clipsToBounds = true
+    }
+    
     
     //MARK: UITextFieldDelegate
     

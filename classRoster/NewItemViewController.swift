@@ -10,6 +10,7 @@ import UIKit
 
 class NewItemViewController: UIViewController {
 
+    @IBOutlet weak var newPersonImage: UIImageView!
     @IBOutlet weak var backToTableView: UINavigationItem!
     
     override func viewDidLoad() {
@@ -23,4 +24,8 @@ class NewItemViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillLayoutSubviews() {
+        self.newPersonImage.layer.cornerRadius = self.newPersonImage.frame.width / 2
+        self.newPersonImage.clipsToBounds = true
+    }
 }
