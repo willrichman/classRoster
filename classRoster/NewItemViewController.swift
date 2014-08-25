@@ -10,6 +10,8 @@ import UIKit
 
 class NewItemViewController: UIViewController {
 
+    @IBOutlet weak var backToTableView: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
