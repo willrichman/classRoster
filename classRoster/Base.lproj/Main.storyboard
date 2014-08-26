@@ -159,8 +159,8 @@
                                     <action selector="getNewPicture:" destination="Ox8-XA-HJ4" eventType="touchUpInside" id="qTt-IA-PPQ"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8M3-qG-ZmZ">
-                                <rect key="frame" x="82" y="205" width="123" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8M3-qG-ZmZ">
+                                <rect key="frame" x="238.5" y="205" width="123" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="KlK-j0-lmL"/>
                                     <constraint firstAttribute="height" constant="28" id="lid-Ix-lwk"/>
