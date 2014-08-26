@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NewItemViewControllerDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     var classRoster = [[Person](), [Person]()] as Array
@@ -73,7 +73,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             destination.personDisplayed = personForText
         }
         else if segue.identifier == "addPersonButton" {
-            
+            var destination = segue.destinationViewController as NewItemViewController
+            destination.delegate = self
         }
     }
     
@@ -93,5 +94,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.classRoster[0].append(newPerson)
             }
         }
+    }
+    
+    // MARK: - NewItemViewControllerDelegate
+    
+    func didFinishCreatingNewPerson(controller: NewItemViewController, newCreatedPerson: Person) {
+        if newCreatedPerson.role == "Student" {
+            self.classRoster[0].append(newCreatedPerson)
+        }
+        else {
+            self.classRoster[1].append(newCreatedPerson)
+        }
+        controller.navigationController.popViewControllerAnimated(true)
     }
 }

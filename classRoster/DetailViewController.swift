@@ -39,13 +39,12 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
         self.detailImage.layer.cornerRadius = self.detailImage.frame.width / 2
         self.detailImage.clipsToBounds = true
     }
     
     
-    //MARK: UITextFieldDelegate
+    //MARK: - UITextFieldDelegate
     
     func textFieldDidEndEditing(textField: UITextField!) {
         self.personDisplayed?.firstName = self.firstName.text
@@ -57,7 +56,7 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         return true
     }
     
-    //MARK: UIImagePickerControllerDelegate
+    //MARK: - UIImagePickerControllerDelegate
     
     @IBAction func capture(sender : UIButton) {
         
@@ -101,17 +100,5 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         //this gets fired when the user cancels out of the process
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 
 }
