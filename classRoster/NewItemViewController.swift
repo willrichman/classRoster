@@ -20,7 +20,7 @@ class NewItemViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet weak var newLastNameText: UITextField!
     @IBOutlet weak var backToTableView: UINavigationItem!
     
-    var newPerson = Person(firstName: "default", lastName: "default", role: "Student")
+    var newPerson = Person()
     var newFirstName = "default"
     var newLastName = "default"
     var newRole = "Student"

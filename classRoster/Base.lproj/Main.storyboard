@@ -17,14 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ay-Dy-9ND">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="3ay-Dy-9ND">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="e8i-QV-rjz">
-                                        <variation key="heightClass=compact-widthClass=compact" constant="568"/>
-                                    </constraint>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="KcB-OW-Zma">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -37,18 +32,14 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="heightClass=compact-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="e8i-QV-rjz"/>
-                                    </mask>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ay-Dy-9ND" secondAttribute="bottom" id="9wj-kN-v1j"/>
-                            <constraint firstItem="3ay-Dy-9ND" firstAttribute="leading" secondItem="y3c-jy-aDJ" secondAttribute="leading" id="fmu-4D-ccc"/>
-                            <constraint firstItem="3ay-Dy-9ND" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hSC-L8-ncY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ay-Dy-9ND" secondAttribute="bottom" id="cm1-g4-SwY"/>
+                            <constraint firstItem="3ay-Dy-9ND" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="d7k-8z-OQJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3ay-Dy-9ND" secondAttribute="trailing" constant="-16" id="dY1-uT-Cdc"/>
+                            <constraint firstItem="3ay-Dy-9ND" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="q9X-MH-CxS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MfK-ZV-oX3">

@@ -12,18 +12,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView: UITableView!
     var classRoster = [[Person](), [Person]()] as Array
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
                             
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateRoster()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        if let savedRoster = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/rosterArchive") as? [AnyObject] {
+            println("Block 1")
+            classRoster = savedRoster as [[Person]]
+        }
+        else {
+            println("Block 2")
+            self.populateRoster()
+        }
+        NSKeyedArchiver.archiveRootObject(classRoster, toFile: documentsPath + "/rosterArchive")
     }
     
     override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData()
+//        classRoster = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/rosterArchive") as Array
     }
 
+    override func viewDidDisappear(animated: Bool) {
+        //NSKeyedArchiver.archiveRootObject(classRoster, toFile: documentsPath + "/rosterArchive")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -79,6 +93,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     /* Populate the classRoster array with the two subarrays */
+    
     func populateRoster() {
         let path = NSBundle.mainBundle().pathForResource("ClassList", ofType: "plist")
         let PLArray = NSArray(contentsOfFile: path) as Array
@@ -86,7 +101,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var firstName = classMember[0] as String
             var lastName = classMember[1] as String
             var role = classMember[2] as String
-            var newPerson = Person(firstName: firstName, lastName: lastName, role: role)
+            var newPerson = Person()
+            newPerson.firstName = firstName
+            newPerson.lastName = lastName
+            newPerson.role = role
             if role == "Teacher" {
                 self.classRoster[1].append(newPerson)
             }
@@ -107,4 +125,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         controller.navigationController.popViewControllerAnimated(true)
     }
+
 }
