@@ -11,24 +11,36 @@ import MobileCoreServices
 
 class DetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
+    
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var gitHubUserNameText: UITextField!
+    @IBOutlet weak var profileImage: UIImageView!
     var personDisplayed : Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.firstName.delegate = self
         self.lastName.delegate = self
+        self.gitHubUserNameText.delegate = self
     }
 
     override func viewWillAppear(animated: Bool) {
         self.firstName.text = self.personDisplayed?.firstName
         self.lastName.text = self.personDisplayed?.lastName
+        if let gitHubUserName = self.personDisplayed?.gitHubUserName {
+            self.gitHubUserNameText.text = gitHubUserName
+        }
+        
         /* If personDisplayed has an image, display it.  Otherwise photo stays as default. */
         if let image = personDisplayed?.image {
             self.detailImage.image = image
         }
+        else if let image = personDisplayed?.profileImage {
+            self.profileImage.image = image
+        }
+        
         self.detailImage.layer.cornerRadius = self.detailImage.frame.width / 2
         self.detailImage.clipsToBounds = true
     }
@@ -49,6 +61,9 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     func textFieldDidEndEditing(textField: UITextField!) {
         self.personDisplayed?.firstName = self.firstName.text
         self.personDisplayed?.lastName = self.lastName.text
+        if self.gitHubUserNameText.text != "" {
+            self.personDisplayed?.gitHubUserName = self.gitHubUserNameText.text
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool{
@@ -100,5 +115,29 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
         //this gets fired when the user cancels out of the process
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
+
+    @IBAction func getGitHubButton(sender: AnyObject) {
+        weak var wself: DetailViewController? = self
+        if self.personDisplayed?.gitHubUserName == nil {
+            var alertTextField : UITextField = UITextField()
+            var gitHubPrompt = UIAlertController(title: "GitHub", message: "What is this person's GitHub user name?", preferredStyle: UIAlertControllerStyle.Alert)
+            gitHubPrompt.addAction(UIAlertAction(title: "Enter", style: UIAlertActionStyle.Default) { _ in
+                if let sself = wself {
+                    if let personDisplayed = sself.personDisplayed? {
+                        personDisplayed.gitHubUserName = alertTextField.text
+                        sself.gitHubUserNameText.text = personDisplayed.gitHubUserName
+                    }
+                }
+            })
+            gitHubPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            gitHubPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+                textField.placeholder = "Username"
+                textField.secureTextEntry = true
+                alertTextField = textField
+            })
+            self.presentViewController(gitHubPrompt, animated: true, completion: nil)
+        }
+    }
+    
 
 }

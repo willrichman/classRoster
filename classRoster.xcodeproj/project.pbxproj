@@ -16,6 +16,7 @@
 		150DA39B1994400700BDB2E1 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 150DA39A1994400700BDB2E1 /* README */; };
 		150DA39D1996BAD700BDB2E1 /* ClassList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 150DA39C1996BAD700BDB2E1 /* ClassList.plist */; };
 		152DE06E19A2F75C00F2F824 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152DE06D19A2F75C00F2F824 /* NewItemViewController.swift */; };
+		1550D50919AE6D9B00A9CBA0 /* gitHubDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 1550D50819AE6D9B00A9CBA0 /* gitHubDefault.png */; };
 		15B1EB20199C23A8009E9856 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B1EB1F199C23A8009E9856 /* DetailViewController.swift */; };
 		15B1EB4F199D5DCE009E9856 /* personDefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15B1EB4E199D5DCE009E9856 /* personDefault.jpg */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		150DA39A1994400700BDB2E1 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		150DA39C1996BAD700BDB2E1 /* ClassList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassList.plist; sourceTree = "<group>"; };
 		152DE06D19A2F75C00F2F824 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		1550D50819AE6D9B00A9CBA0 /* gitHubDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gitHubDefault.png; sourceTree = "<group>"; };
 		15B1EB1F199C23A8009E9856 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		15B1EB4E199D5DCE009E9856 /* personDefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = personDefault.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 		150DA37919943E6900BDB2E1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1550D50819AE6D9B00A9CBA0 /* gitHubDefault.png */,
 				15B1EB4E199D5DCE009E9856 /* personDefault.jpg */,
 				150DA37A19943E6900BDB2E1 /* Info.plist */,
 			);
@@ -207,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1550D50919AE6D9B00A9CBA0 /* gitHubDefault.png in Resources */,
 				15B1EB4F199D5DCE009E9856 /* personDefault.jpg in Resources */,
 				150DA39B1994400700BDB2E1 /* README in Resources */,
 				150DA38119943E6900BDB2E1 /* Main.storyboard in Resources */,
