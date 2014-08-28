@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        if let savedRoster = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/rosterArchive") as? [AnyObject] {
+        if let savedRoster : AnyObject = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/rosterArchive") {
             println("Block 1")
             classRoster = savedRoster as [[Person]]
         }
@@ -26,12 +26,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             println("Block 2")
             self.populateRoster()
         }
-        NSKeyedArchiver.archiveRootObject(classRoster, toFile: documentsPath + "/rosterArchive")
     }
     
     override func viewWillAppear(animated: Bool) {
         self.tableView.reloadData()
-//        classRoster = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/rosterArchive") as Array
+        NSKeyedArchiver.archiveRootObject(classRoster, toFile: documentsPath + "/rosterArchive")
     }
 
     override func viewDidDisappear(animated: Bool) {

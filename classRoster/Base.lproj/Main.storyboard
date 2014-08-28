@@ -478,7 +478,7 @@
                         <outlet property="firstName" destination="Man-cM-f94" id="jlM-GV-DxZ"/>
                         <outlet property="gitHubUserNameText" destination="cv2-6M-KAc" id="6nS-rq-sNL"/>
                         <outlet property="lastName" destination="Ah6-GY-vTN" id="MsP-6C-1eX"/>
-                        <outlet property="profileImage" destination="VGv-XL-c4W" id="lGK-Jl-Ruq"/>
+                        <outlet property="displayedProfileImage" destination="VGv-XL-c4W" id="lGK-Jl-Ruq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Kf-FG-dM2" userLabel="First Responder" sceneMemberID="firstResponder"/>
