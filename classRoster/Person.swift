@@ -22,6 +22,15 @@ class Person: NSObject, NSCoding {
         self.firstName = aDecoder.decodeObjectForKey("firstName") as String
         self.lastName = aDecoder.decodeObjectForKey("lastName") as String
         self.role = aDecoder.decodeObjectForKey("role") as String
+//        if let userName = aDecoder.decodeObjectForKey("gitHubUserName") as? String {
+//            self.gitHubUserName = userName
+//        }
+//        if let myImage = aDecoder.decodeObjectForKey("image") as? UIImage {
+//            self.image = myImage
+//        }
+//        if let profileImage = aDecoder.decodeObjectForKey("profileImage") as? UIImage {
+//            self.profileImage = profileImage
+//        }
         self.gitHubUserName = aDecoder.decodeObjectForKey("gitHubUserName") as? String
         self.image = aDecoder.decodeObjectForKey("image") as? UIImage
         self.profileImage = aDecoder.decodeObjectForKey("profileImage") as? UIImage
